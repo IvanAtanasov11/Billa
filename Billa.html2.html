@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BILLA</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+		
+		header {
+			background-color: #ff0000;
+			color: #ffd000;
+			padding: px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+		}
+		
+		nav li {
+			margin: 0 10px;
+		}
+		
+		nav a {
+			color: #ffd000;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: bold;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		nav a:hover {
+			color: #000;
+			background-color: #ffd000;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		
+		h1 {
+			margin: 0;
+			font-size: 36px;
+		}
+        .logo {
+            margin-bottom: 10px;
+            max-width: 350px;
+			max-height: 150px;
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+		main {
+			padding: 20px;
+		}
+		
+		section {
+			margin-bottom: 40px;
+		}
+		
+		h2 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		
+		ul {
+			list-style-type: disc;
+			margin-left: 20px;
+		}
+		
+		blockquote {
+			border-left: 5px solid #ff0000;
+			padding: 10px;
+			margin: 0;
+		}
+		
+		blockquote p {
+			margin: 0;
+			font-style: italic;
+		}
+		
+		blockquote footer {
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		
+		form label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+			font-size: 18px;
+		}
+		
+		form input[type="text"],
+		form input[type="email"],
+		form textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ffd000;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: none;
+		}
+		
+		form input[type="submit"] {
+			background-color: #ff0000;
+			color: #ffd000;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		form input[type="submit"]:hover {
+			background-color: #ffd000;
+			color: #ff0000;
+			border: 1px solid #ff0000;
+		}
+		
+		footer {
+			background-color: #504b4b;
+			color: #ffd000;
+			padding: 10px;
+			text-align: center;
+			font-size: 14px;
+        }
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+<img class="logo" src="logo.png" alt="лого">
+<nav>
+    <ul>
+        <li><a href="#">Начална страница</a></li>
+        <li><a href="services.html">Количка</a></li>
+		<li><a href="price.html">Продукти</a></li>
+        <li><a href="about.html">За нас</a></li>
+    </ul>
+</nav>
+</header>
+<main>
+<section>
+    <h2>BILLA</h2>
+    <p>BILLA е до теб, за да може всеки ден – дори и с нещо малко, да се погрижиш и споделиш с любимите си хора. Да бъдеш изключителен!</p>
+    <blockquote>
+        <p>Billa e качествен магазин с качествени продукти</p>
+        <footer>- Анастасия, Доволен клиент</footer>
+    </blockquote>
+</section>
+<section>
+    <h2>Нашите услуги включват: </h2>
+    <ul>
+        <li> Гранде Оферт</li>
+        <li>Супер цена</li>
+        <li>Домашен произхот</li>
+    </ul>
+</section>
+<section>
+    <h2>Свържете се с нас за повече информация</h2>
+    <form>
+        <div id="message"></div>
+        <script>
+            const form = document.querySelector('form');
+            const message = document.querySelector('#message');
+        
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                message.textContent = 'Вие успешно изпратихте вашето съобщение. Ние ще се свържем или отговорим на вашия въпрос възможно най-бързо.';
+                form.reset();
+            });
+        </script>        
+        <label for="name">Име</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Имейл</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Съобщение</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <input type="submit" value="Изпратете съобщение">
+    </form>
+</section>
+</main>
+<footer>
+<p>&copy; 2023 Billa. Всички права запазени.</p>
+</footer>
+</body>
+</html>
